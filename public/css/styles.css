@@ -19,17 +19,37 @@ body {
 }
 
 /* GLOBALS */
+p {
+    font-size: 1.0rem;
+}
 a {
     text-decoration: none;
     text-transform: capitalize;
     font-size: 0.8rem;
 }
 
+h2,h3 {
+    margin: 0.4rem 0rem;
+}
+h4 {
+    margin: 0.6rem 0rem;
+}
+
+h2 {
+    font-size: 1.8rem;
+}
+h3 {
+    font-size: 1.5rem;
+}
 h4 {
     font-size: 1.2rem;
     color: var(--primary-color);
     text-decoration: underline;
     text-decoration-line: 2px;
+}
+h5 {
+    font-size: 1.0rem;
+    font-weight: 500;
 }
 
 /* UTILS */
@@ -115,7 +135,7 @@ a.nav-element.active:hover {
 /* MAIN */
 .main {
     display: grid;
-    grid-template-columns: 70% 30%;
+    grid-template-columns: 65% 35%;
     justify-items: center;
 }
 .left-column, .right-column {
@@ -127,11 +147,31 @@ a.nav-element.active:hover {
 }
 /* ARTICLE */
 .big-article {
-    width: 600px;
+    max-width: 600px;
+    width: 100%;
 }
 .big-article-img {
     max-width: 600px;
     width: 100%;
+}
+.mid-article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 600px;
+}
+.mid-article-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+
+}
+.article-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
 }
 .small-article {
     display: grid;
@@ -141,13 +181,19 @@ a.nav-element.active:hover {
     gap: 0.8rem;
 }
 .small-article-img {
-    width: 80%;
+    width: 100%;
 }
 .article-read {
     color: var(--primary-color);
     text-decoration: underline;
     text-decoration-line: 2px;
     font-weight: bolder;
+}
+
+.big-articles-list {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 1rem;
 }
 
 /* FOOTER */

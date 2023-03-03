@@ -40,6 +40,24 @@ app.get("/", (req,res) => {
     res.render('index', {})
 })
 
+app.get("/policy", (req,res) => {
+    res.render('news', {
+        title: "Policy"
+    })
+})
+
+app.get("/sports", (req,res) => {
+    res.render('news', {
+        title: "Sports"
+    })
+})
+
+app.get("/curious", (req,res) => {
+    res.render('news', {
+        title: "Curious"
+    })
+})
+
 // Crear Servidor y escuchar peticiones http
 app.listen(port, () => {
     console.log("Servidor conectado en el puerto " + port);
