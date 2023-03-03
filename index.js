@@ -2,6 +2,7 @@ const {conection} = require('./database/conection');
 const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
+require('path');
 
 
 // Iniciar APP
@@ -20,6 +21,24 @@ app.use(cors());
 // Convertir body a objeto JS
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
+
+// HANDLERBARS
+const hbs = require('hbs');
+hbs.registerPartials(__dirname + '/views/partials', function (err) {});
+app.set('view engine', 'hbs');
+app.set("views", __dirname + "/views");
+
+app.use(express.static(__dirname + "/public"));
+
+// Crear rutas
+const article_routes = require('./routes/article');
+
+// Cargando las rutas
+app.use("/article", article_routes);
+
+app.get("/", (req,res) => {
+    res.render('index', {})
+})
 
 // Crear Servidor y escuchar peticiones http
 app.listen(port, () => {
