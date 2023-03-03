@@ -1,0 +1,103 @@
+:root {
+    --primary-font: 'Golos Text', sans-serif;
+    --primary-color: #eb5e5e;
+    --secondary-color: gray;
+}
+
+* {
+    font-family: var(--primary-font);
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+
+/* GLOBALS */
+a {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 0.8rem;
+}
+
+/* UTILS */
+
+.btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.6rem;
+    cursor: pointer;
+    width: 100px;
+    justify-content: center;
+}
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+.btn-primary:hover {
+    background-image: linear-gradient(to right, var(--primary-color) , #efb3b3);
+}
+
+/* NAVIGATION */
+.header {
+    margin: 0 4rem;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav-elements {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+.nav-element {
+    padding: 1rem;
+    color: var(--secondary-color);
+    font-weight: bolder;
+}
+
+.nav-element:hover {
+    background-color: var(--primary-color);
+    color: white !important;
+    font-weight: bolder;
+}
+
+.nav-element.active {
+    color: var(--primary-color) !important;
+}
+a.nav-element.active:hover {
+    color: white !important;
+}
+
+.logo-img {
+    width: 50px;
+}
+
+.nav-autentication {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* BANNER */
+.banner {
+    background-image: url(../images/banner.jpg);
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    width: 100%;
+}
