@@ -25,6 +25,13 @@ a {
     font-size: 0.8rem;
 }
 
+h4 {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-line: 2px;
+}
+
 /* UTILS */
 
 .btn {
@@ -42,6 +49,9 @@ a {
 }
 .btn-primary:hover {
     background-image: linear-gradient(to right, var(--primary-color) , #efb3b3);
+}
+.separacion {
+    margin: 1rem 8rem;
 }
 
 /* NAVIGATION */
@@ -100,4 +110,57 @@ a.nav-element.active:hover {
     background-size: cover;
     height: 500px;
     width: 100%;
+}
+
+/* MAIN */
+.main {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    justify-items: center;
+}
+.left-column, .right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    align-items: center;
+}
+/* ARTICLE */
+.big-article {
+    width: 600px;
+}
+.big-article-img {
+    max-width: 600px;
+    width: 100%;
+}
+.small-article {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    justify-items: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+.small-article-img {
+    width: 80%;
+}
+.article-read {
+    color: var(--primary-color);
+    text-decoration: underline;
+    text-decoration-line: 2px;
+    font-weight: bolder;
+}
+
+/* FOOTER */
+.footer {
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.footer .nav-elements .nav-element {
+    color: white;
+}
+.footer .nav-elements .nav-element.active {
+    color: white !important;
 }
