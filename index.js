@@ -37,24 +37,48 @@ const article_routes = require('./routes/article');
 app.use("/article", article_routes);
 
 app.get("/", (req,res) => {
-    res.render('index', {})
+    res.render('index', {
+        page: "Index"
+    })
 })
 
+// Mover a controller user
+app.get("/login", (req,res) => {
+    res.render('login', {})
+}) 
+// Mover a controller user
+app.get("/register", (req,res) => {
+    res.render('register', {})
+}) 
+
+// Mover a controller
 app.get("/policy", (req,res) => {
     res.render('news', {
-        title: "Policy"
+        title: "Policy",
+        page: "Policy"
     })
 })
 
+// Mover a controller
 app.get("/sports", (req,res) => {
     res.render('news', {
-        title: "Sports"
+        title: "Sports",
+        page: "Sports"
     })
 })
 
+// Mover a controller
 app.get("/curious", (req,res) => {
     res.render('news', {
-        title: "Curious"
+        title: "Curious",
+        page: "Curious"
+    })
+})
+
+// Mover a controller
+app.get("/new", (req,res) => {
+    res.render('new', {
+        title: "New Title",
     })
 })
 
