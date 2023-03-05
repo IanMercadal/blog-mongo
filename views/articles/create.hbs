@@ -1,0 +1,37 @@
+{{> header}}
+<div class="separacion">
+    <h2>{{title}}</h2>
+    <form method="post" action="/articles/save">
+        <div class="inputBox">
+            <label>Title</label>
+            <input type="text" name="title" required>
+        </div>
+        <div class="inputBox">
+            <label>content</label>
+            <textarea name="content"></textarea>
+        </div>
+        <div class="inputBox">
+            <label>Date</label>
+            <input type="date" name="date" required>
+        </div>
+        <div class="inputBox">
+            <label>Date</label>
+            <input type="date" required>
+        </div>
+        <div class="inputBox">
+            <label>Category</label>
+            <select name="category">
+                <option value="policy">policy</option>
+                <option value="sports">sports</option>
+                <option value="curious">curious</option>
+            </select>
+        </div>
+        <div class="inputBox">
+            <label>Image</label>
+            <input type="file" name="image" required>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{{> footer}}
