@@ -13,6 +13,10 @@ const ArticlesSchema = new Schema({
         type: Date,
         default: Date.now
     },
+    category: {
+        type: String,
+        enum: ['policy', 'sports', 'curious']
+    },
     image: {
         type: String,
         default: "default.png"

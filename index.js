@@ -35,8 +35,8 @@ const article_routes = require('./routes/article');
 const user_routes = require('./routes/user');
 
 // Cargando las rutas
-app.use("/article", article_routes);
-app.use("/", user_routes);
+app.use("/articles", article_routes);
+app.use("/user", user_routes);
 
 app.get("/", (req,res) => {
     res.render('index', {
@@ -44,37 +44,6 @@ app.get("/", (req,res) => {
     })
 })
 
-
-// Mover a controller
-app.get("/policy", (req,res) => {
-    res.render('news', {
-        title: "Policy",
-        page: "Policy"
-    })
-})
-
-// Mover a controller
-app.get("/sports", (req,res) => {
-    res.render('news', {
-        title: "Sports",
-        page: "Sports"
-    })
-})
-
-// Mover a controller
-app.get("/curious", (req,res) => {
-    res.render('news', {
-        title: "Curious",
-        page: "Curious"
-    })
-})
-
-// Mover a controller
-app.get("/new", (req,res) => {
-    res.render('new', {
-        title: "New Title",
-    })
-})
 
 // Crear Servidor y escuchar peticiones http
 app.listen(port, () => {
