@@ -2,19 +2,11 @@
 const User = require('../models/User');
 
 const login = (req,res) => {
-    // return res.status(200).json({
-    //     status: "success",
-    //     mensaje: "Login"
-    // });
-    return res.render('login', {})
+    return res.render('user/login', {})
 }
 
 const register = (req,res) => {
-    // return res.status(200).json({
-    //     status: "success",
-    //     mensaje: "Login"
-    // });
-    return res.render('register', {})
+    return res.render('user/register', {})
 }
 
 

@@ -34,16 +34,16 @@ app.use(express.static(__dirname + "/public"));
 const article_routes = require('./routes/article');
 const user_routes = require('./routes/user');
 
-// Cargando las rutas
-app.use("/articles", article_routes);
-app.use("/user", user_routes);
-
+// Por determinar
 app.get("/", (req,res) => {
     res.render('index', {
         page: "Index"
     })
 })
 
+// Cargando las rutas
+app.use("/articles", article_routes);
+app.use("/user", user_routes);
 
 // Crear Servidor y escuchar peticiones http
 app.listen(port, () => {
