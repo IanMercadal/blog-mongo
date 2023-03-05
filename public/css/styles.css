@@ -240,7 +240,10 @@ a.nav-element.active:hover {
     display: flex;
     flex-direction: column;
 }
-
+.login, .register {
+    height: 84vh;
+    background-color: var(--primary-color);
+}
 /* FOOTER */
 .footer {
     background-color: var(--primary-color);
