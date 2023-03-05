@@ -32,9 +32,11 @@ app.use(express.static(__dirname + "/public"));
 
 // Crear rutas
 const article_routes = require('./routes/article');
+const user_routes = require('./routes/user');
 
 // Cargando las rutas
 app.use("/article", article_routes);
+app.use("/", user_routes);
 
 app.get("/", (req,res) => {
     res.render('index', {
@@ -42,14 +44,6 @@ app.get("/", (req,res) => {
     })
 })
 
-// Mover a controller user
-app.get("/login", (req,res) => {
-    res.render('login', {})
-}) 
-// Mover a controller user
-app.get("/register", (req,res) => {
-    res.render('register', {})
-}) 
 
 // Mover a controller
 app.get("/policy", (req,res) => {
