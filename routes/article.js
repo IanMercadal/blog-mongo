@@ -10,6 +10,8 @@ router.get("/article", ArticleController.article);
 // CRUD
 router.get("/create", ArticleController.create);
 router.post("/save", ArticleController.save);
+router.put("/edit/:id", ArticleController.edit);
+
 
 
 

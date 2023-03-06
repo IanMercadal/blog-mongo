@@ -87,10 +87,29 @@ const save = (req,res) => {
         })
     });
 }
+const edit = (req,res) => {
+    let articleId = req.params.id;
+
+    Article.findOneAndUpdate({ _id: articleId }, req.body, { new: true }, (error, articleUpdated) => {
+
+        if (error || !articleUpdated) {
+            return res.status(500).json({
+                status: "error",
+                mensaje: "Error al editar"
+            })
+        };
+
+        return res.status(200).json({
+            status: "success",
+            article: articleUpdated
+        })
+    });
+}
 
 module.exports = {
     category,
     article,
     create,
-    save
+    save,
+    edit
 }
