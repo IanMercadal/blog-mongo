@@ -3,9 +3,7 @@ const ArticleController = require('../controllers/article');
 
 const router = Router(); 
 
-router.get("/policy", ArticleController.policy);
-router.get("/sports", ArticleController.sports);
-router.get("/curious", ArticleController.curious);
+router.get("/:category", ArticleController.category);
 router.get("/article", ArticleController.article);
 
 // CRUD

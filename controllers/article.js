@@ -1,24 +1,34 @@
 const Article = require('../models/Article');
 
-const policy = (req,res) => {
-    return res.render('articles/articles', {
-        title: "Policy",
-        page: "Policy"
-    })
-}
+const category = (req,res) => {
 
-const sports = (req,res) => {
-    return res.render('articles/articles', {
-        title: "Sports",
-        page: "Sports"
-    })
-}
-
-const curious = (req,res) => {
-    res.render('articles/articles', {
-        title: "Curious",
-        page: "Curious"
-    })
+    let parameters = req.params.category;
+    // Llamar a funcion de busqueda
+    try {
+        Article.find({"$or": [
+            {"category": {"$regex": parameters, "$options": "i"}},
+        ]})
+        .sort({fecha: -1})
+        .exec((error, articlesFound) => {
+            if(error || !articlesFound || articlesFound.length <= 0) {
+                return res.status(404).json({
+                    status: "error",
+                    mensaje: "No se han encontrado artículos"
+                })
+            }
+    
+            return res.render('articles/articles', {
+                status: "success",
+                title: "Policy",
+                articles: articlesFound
+            })
+        })
+    } catch (error) {
+        return res.status(404).json({
+            status: "error",
+            mensaje: "No se encuentran los datos"
+        })
+    }
 }
 
 const article = (req,res) => {
@@ -54,9 +64,7 @@ const save = (req,res) => {
 }
 
 module.exports = {
-    policy,
-    sports,
-    curious,
+    category,
     article,
     create,
     save
