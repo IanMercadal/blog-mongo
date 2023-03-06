@@ -87,6 +87,7 @@ const save = (req,res) => {
         })
     });
 }
+
 const edit = (req,res) => {
     let articleId = req.params.id;
 
@@ -106,10 +107,30 @@ const edit = (req,res) => {
     });
 }
 
+const remove = (req,res) => {
+    let articleId = req.params.id;
+
+    Article.findOneAndDelete({ _id: articleId }, (error, articleDeleted) => {
+        if(error || !articleDeleted) {
+            return res.status(500).json({
+                status:"error",
+                mensaje: "Error al borrar"
+            })
+        };
+
+        return res.status(200).json({
+            status: "success",
+            article: articleDeleted,
+            mensaje: "Borrar"
+        })
+    })
+}
+
 module.exports = {
     category,
     article,
     create,
     save,
-    edit
+    edit,
+    remove
 }

@@ -11,6 +11,7 @@ router.get("/article", ArticleController.article);
 router.get("/create", ArticleController.create);
 router.post("/save", ArticleController.save);
 router.put("/edit/:id", ArticleController.edit);
+router.delete("/remove/:id", ArticleController.remove);
 
 
 
