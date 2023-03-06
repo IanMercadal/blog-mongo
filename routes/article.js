@@ -4,6 +4,7 @@ const ArticleController = require('../controllers/article');
 const router = Router(); 
 
 router.get("/:category", ArticleController.category);
+router.get("/:category/:id", ArticleController.article);
 router.get("/article", ArticleController.article);
 
 // CRUD

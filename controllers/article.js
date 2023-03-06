@@ -32,9 +32,34 @@ const category = (req,res) => {
 }
 
 const article = (req,res) => {
-    res.render('articles/article', {
-        title: "New Title",
-    })
+    let articleId = req.params.id;
+
+    try {
+        Article.findById(articleId)
+        .exec((error, articleFound) => {
+            if(error || !articleFound || articleFound.length <= 0) {
+                return res.status(404).json({
+                    status: "error",
+                    mensaje: "No se han encontrado artículos"
+                })
+            }
+        
+            console.log("-----------------");
+            console.log(articleFound);
+    
+            return res.render('articles/article', {
+                status: "success",
+                article: articleFound
+            })
+        })
+
+    } catch (error) {
+        return res.status(404).json({
+            status: "error",
+            mensaje: "No se encuentran los datos"
+        })
+    }
+
 }
 
 const create = (req,res) => {
