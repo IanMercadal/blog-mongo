@@ -19,7 +19,7 @@ const category = (req,res) => {
     
             return res.render('articles/articles', {
                 status: "success",
-                title: "Policy",
+                title: parameters,
                 articles: articlesFound
             })
         })
